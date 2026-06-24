@@ -25,6 +25,13 @@ COPY . .
 RUN --mount=type=cache,id=pnpm-store,target=/root/.local/share/pnpm/store \
     pnpm install --frozen-lockfile
 
+# Generate protobuf TS stubs. The local @meshtastic/protobufs workspace package
+# re-exports generated code that is gitignored (not committed) and that the web
+# app build resolves to. Uses buf with the remote `es` plugin → requires network
+# to buf.build at build time. (The bridge itself doesn't need this; it uses the
+# pre-generated JSR copy of the protobufs.)
+RUN cd packages/protobufs && npx --yes @bufbuild/buf@latest generate
+
 # Static web client -> apps/web/dist
 # VITE_DISABLE_PWA: skip vite-plugin-pwa (unnecessary for a LAN deployment; its
 #   service-worker build step is fragile under Vite 8 + rolldown in-container).
