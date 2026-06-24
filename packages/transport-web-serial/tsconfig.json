@@ -1,0 +1,7 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "types": ["@types/w3c-web-serial"]
+  },
+  "include": ["src"]
+}

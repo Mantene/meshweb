@@ -1,0 +1,7 @@
+{
+  "tool_name": "Bash",
+  "tool_input_preview": "{\"command\":\"cd /Users/mhood/projects/meshtastic/web\\necho \\\"=== bridge build (tsdown bundle) ===\\\"\\ncorepack pnpm -C apps/bridge build 2>&1 | tail -30\\necho \\\"\\\"\\necho \\\"=== bundle output ===\\\"\\nls -l...",
+  "error": "Exit code 1\nzoxide: detected a possible configuration issue.\nPlease ensure that zoxide is initialized right at the end of your shell configuration file (usually ~/.zshrc).\n\nIf the issue persists, consider filing an issue at:\nhttps://github.com/ajeetdsouza/zoxide/issues\n\nDisable this message by setting _ZO_DOCTOR=0.\n\n=== bridge build (tsdown bundle) ===\n\u001b[2m$ tsdown\u001b[22m\n\u001b[34mℹ\u001b[39m \u001b[34mtsdown v0.22.3\u001b[39m powered by \u001b[38;2;255;126;23mrolldown v1.1.2\u001b[39m\n\u001b[34mℹ\u001b[39m config file: \u001b[4m/Users/mhoo...",
+  "timestamp": "2026-06-24T14:45:49.854Z",
+  "retry_count": 1
+}

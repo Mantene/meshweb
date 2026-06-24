@@ -1,0 +1,32 @@
+# Meshtastic web client + serial bridge.
+#
+# Run from the web/ monorepo root on the Docker HOST (where /dev/ttyACM0 exists):
+#   docker compose -f apps/bridge/infra/docker-compose.yml up --build
+#
+# Then open http://<host>:8080 and add an "HTTP" connection pointing at <host>:8080.
+services:
+  meshtastic-web-bridge:
+    build:
+      # Context is the repo root (two levels up from this infra/ dir).
+      context: ../../..
+      dockerfile: apps/bridge/infra/Dockerfile
+    image: meshtastic-web-bridge:latest
+    container_name: meshtastic-web-bridge
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    # Pass the USB device through to the container.
+    # Tip: prefer a stable path like /dev/serial/by-id/usb-...-if00 to survive replugs.
+    devices:
+      - "/dev/ttyACM0:/dev/ttyACM0"
+    # The non-root `node` user needs the serial device's group to open the port.
+    # `dialout` is correct on Debian/Ubuntu hosts. If your device is owned by a
+    # different group, use the numeric GID from `ls -l /dev/ttyACM0`, e.g. "20".
+    group_add:
+      - "dialout"
+    environment:
+      MESHTASTIC_SERIAL_PORT: "/dev/ttyACM0"
+      MESHTASTIC_BAUD_RATE: "115200"
+      PORT: "8080"
+    # Last-resort fallback if device cgroup rules still block access (broad — avoid):
+    # privileged: true

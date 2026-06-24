@@ -1,0 +1,10 @@
+{
+  "name": "meshtastic-bridge-runtime",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Minimal runtime dependency set for the Docker image. Installed in its own stage (outside the pnpm workspace) so serialport's native binding builds/loads normally despite the workspace's allowBuilds:false policy.",
+  "dependencies": {
+    "serialport": "13.0.0"
+  }
+}

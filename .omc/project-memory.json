@@ -1,0 +1,457 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1782310334757,
+  "projectRoot": "/Users/mhood/projects/meshtastic/web",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "tsconfig.json"
+        ]
+      }
+    ],
+    "frameworks": [
+      {
+        "name": "@playwright/test",
+        "version": "1.49.0",
+        "category": "testing"
+      },
+      {
+        "name": "vitest",
+        "version": "4.1.9",
+        "category": "testing"
+      }
+    ],
+    "packageManager": "pnpm",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": "pnpm test",
+    "lintCommand": "pnpm lint",
+    "devCommand": null,
+    "scripts": {
+      "preinstall": "npx only-allow pnpm",
+      "lint": "oxlint",
+      "lint:fix": "oxlint --fix",
+      "format": "oxfmt --check .",
+      "format:fix": "oxfmt .",
+      "check": "pnpm lint && pnpm format",
+      "check:fix": "pnpm lint:fix && pnpm format:fix",
+      "build:all": "pnpm run --filter '*' build",
+      "clean:all": "pnpm run --filter '*' clean",
+      "publish:packages": "pnpm run build --filter 'packages/transport-*'",
+      "test": "vitest",
+      "test:e2e": "playwright test",
+      "test:e2e:ui": "playwright test --ui",
+      "test:e2e:report": "playwright show-report e2e/.report",
+      "prepare": "husky"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": true,
+    "workspaces": [],
+    "mainDirectories": [
+      "tests"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "apps": {
+      "path": "apps",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1782310334678,
+      "keyFiles": []
+    },
+    "e2e": {
+      "path": "e2e",
+      "purpose": null,
+      "fileCount": 4,
+      "lastAccessed": 1782310334678,
+      "keyFiles": [
+        "README.md",
+        "global-setup.ts",
+        "global-teardown.ts"
+      ]
+    },
+    "packages": {
+      "path": "packages",
+      "purpose": null,
+      "fileCount": 0,
+      "lastAccessed": 1782310334682,
+      "keyFiles": []
+    },
+    "tests": {
+      "path": "tests",
+      "purpose": "Test files",
+      "fileCount": 0,
+      "lastAccessed": 1782310334683,
+      "keyFiles": []
+    },
+    "e2e/fixtures": {
+      "path": "e2e/fixtures",
+      "purpose": "Test fixtures",
+      "fileCount": 2,
+      "lastAccessed": 1782310334683,
+      "keyFiles": [
+        "peer.ts",
+        "test.ts"
+      ]
+    },
+    "e2e/pages": {
+      "path": "e2e/pages",
+      "purpose": "Page components",
+      "fileCount": 2,
+      "lastAccessed": 1782310334683,
+      "keyFiles": [
+        "ConnectionPage.ts",
+        "MessagesPage.ts"
+      ]
+    },
+    "e2e/tests": {
+      "path": "e2e/tests",
+      "purpose": "Test files",
+      "fileCount": 3,
+      "lastAccessed": 1782310334683,
+      "keyFiles": [
+        "connect.spec.ts",
+        "messaging.broadcast.spec.ts",
+        "messaging.direct.spec.ts"
+      ]
+    },
+    "tests/utils": {
+      "path": "tests/utils",
+      "purpose": "Utility functions",
+      "fileCount": 1,
+      "lastAccessed": 1782310334684,
+      "keyFiles": [
+        "transportContract.ts"
+      ]
+    }
+  },
+  "hotPaths": [
+    {
+      "path": "packages/transport-node-serial/src/transport.ts",
+      "accessCount": 4,
+      "lastAccessed": 1782312995639,
+      "type": "file"
+    },
+    {
+      "path": "packages/transport-http/src/transport.ts",
+      "accessCount": 4,
+      "lastAccessed": 1782312996050,
+      "type": "file"
+    },
+    {
+      "path": "packages/sdk/src/core/transport/Transport.ts",
+      "accessCount": 3,
+      "lastAccessed": 1782313009596,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/vite.config.ts",
+      "accessCount": 3,
+      "lastAccessed": 1782314819217,
+      "type": "file"
+    },
+    {
+      "path": "packages/transport-web-serial/package.json",
+      "accessCount": 2,
+      "lastAccessed": 1782310634842,
+      "type": "file"
+    },
+    {
+      "path": "packages/transport-http/package.json",
+      "accessCount": 2,
+      "lastAccessed": 1782310635062,
+      "type": "file"
+    },
+    {
+      "path": "packages/transport-http/mod.ts",
+      "accessCount": 2,
+      "lastAccessed": 1782310638456,
+      "type": "file"
+    },
+    {
+      "path": "packages/transport-web-serial/mod.ts",
+      "accessCount": 2,
+      "lastAccessed": 1782310638643,
+      "type": "file"
+    },
+    {
+      "path": "packages/transport-web-serial/src/transport.ts",
+      "accessCount": 2,
+      "lastAccessed": 1782310640836,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/package.json",
+      "accessCount": 2,
+      "lastAccessed": 1782310646075,
+      "type": "file"
+    },
+    {
+      "path": "package.json",
+      "accessCount": 2,
+      "lastAccessed": 1782310659365,
+      "type": "file"
+    },
+    {
+      "path": "packages/transport-node/src/transport.ts",
+      "accessCount": 2,
+      "lastAccessed": 1782310659472,
+      "type": "file"
+    },
+    {
+      "path": "packages/transport-node-serial/README.md",
+      "accessCount": 2,
+      "lastAccessed": 1782310664000,
+      "type": "file"
+    },
+    {
+      "path": "packages/transport-deno/src/transport.ts",
+      "accessCount": 2,
+      "lastAccessed": 1782310684896,
+      "type": "file"
+    },
+    {
+      "path": "packages/sdk/src/core/packet-codec/fromDevice.ts",
+      "accessCount": 2,
+      "lastAccessed": 1782313010041,
+      "type": "file"
+    },
+    {
+      "path": "packages/sdk/src/core/packet-codec/toDevice.ts",
+      "accessCount": 2,
+      "lastAccessed": 1782313010770,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/core/connections/transports.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782310622107,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/core/connections/sdkClient.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782310622318,
+      "type": "file"
+    },
+    {
+      "path": "packages/transport-node-serial/package.json",
+      "accessCount": 1,
+      "lastAccessed": 1782310628834,
+      "type": "file"
+    },
+    {
+      "path": "packages/transport-node/package.json",
+      "accessCount": 1,
+      "lastAccessed": 1782310629098,
+      "type": "file"
+    },
+    {
+      "path": "packages/transport-deno/package.json",
+      "accessCount": 1,
+      "lastAccessed": 1782310629839,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/pages/Connections/index.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1782310629907,
+      "type": "file"
+    },
+    {
+      "path": "packages/sdk/package.json",
+      "accessCount": 1,
+      "lastAccessed": 1782310630066,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/pages/Connections/useConnections.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782310630151,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/components/Dialog/AddConnectionDialog/AddConnectionDialog.tsx",
+      "accessCount": 1,
+      "lastAccessed": 1782310630217,
+      "type": "file"
+    },
+    {
+      "path": "packages/sdk/src/core/transport/index.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782310632192,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/core/stores/deviceStore/types.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782310632424,
+      "type": "file"
+    },
+    {
+      "path": "packages/transport-web-bluetooth/package.json",
+      "accessCount": 1,
+      "lastAccessed": 1782310635476,
+      "type": "file"
+    },
+    {
+      "path": "packages/transport-web-bluetooth/mod.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782310637675,
+      "type": "file"
+    },
+    {
+      "path": "packages/transport-node-serial/mod.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782310638168,
+      "type": "file"
+    },
+    {
+      "path": "packages/transport-node/mod.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782310638666,
+      "type": "file"
+    },
+    {
+      "path": "packages/transport-deno/mod.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782310638887,
+      "type": "file"
+    },
+    {
+      "path": "packages/transport-web-bluetooth/src/transport.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782310640213,
+      "type": "file"
+    },
+    {
+      "path": "README.md",
+      "accessCount": 1,
+      "lastAccessed": 1782310641245,
+      "type": "file"
+    },
+    {
+      "path": "CLAUDE.md",
+      "accessCount": 1,
+      "lastAccessed": 1782310641421,
+      "type": "file"
+    },
+    {
+      "path": "packages/sdk/src/shim/legacyMeshDevice.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782310648391,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/index.html",
+      "accessCount": 1,
+      "lastAccessed": 1782310648694,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/infra/Containerfile",
+      "accessCount": 1,
+      "lastAccessed": 1782310651122,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/pages/Connections/utils.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782310651190,
+      "type": "file"
+    },
+    {
+      "path": "packages/transport-http/README.md",
+      "accessCount": 1,
+      "lastAccessed": 1782310651319,
+      "type": "file"
+    },
+    {
+      "path": "e2e/device/docker-compose.yml",
+      "accessCount": 1,
+      "lastAccessed": 1782310651562,
+      "type": "file"
+    },
+    {
+      "path": "packages/transport-node/README.md",
+      "accessCount": 1,
+      "lastAccessed": 1782310651758,
+      "type": "file"
+    },
+    {
+      "path": ".devcontainer/devcontainer.json",
+      "accessCount": 1,
+      "lastAccessed": 1782310653552,
+      "type": "file"
+    },
+    {
+      "path": "packages/sdk/src/core/packet-codec/index.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782310654205,
+      "type": "file"
+    },
+    {
+      "path": "apps/web/src/core/stores/deviceStore/index.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782310655679,
+      "type": "file"
+    },
+    {
+      "path": "e2e/global-setup.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782310658837,
+      "type": "file"
+    },
+    {
+      "path": "packages/transport-node-serial/src/transport.test.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782310658889,
+      "type": "file"
+    },
+    {
+      "path": "e2e/fixtures/peer.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782310658981,
+      "type": "file"
+    },
+    {
+      "path": "e2e/fixtures/test.ts",
+      "accessCount": 1,
+      "lastAccessed": 1782310659201,
+      "type": "file"
+    },
+    {
+      "path": "e2e/device/nodeA.yaml",
+      "accessCount": 1,
+      "lastAccessed": 1782310661488,
+      "type": "file"
+    }
+  ],
+  "userDirectives": []
+}

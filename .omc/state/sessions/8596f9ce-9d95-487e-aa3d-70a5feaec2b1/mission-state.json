@@ -1,0 +1,123 @@
+{
+  "updatedAt": "2026-06-24T15:09:29.818Z",
+  "missions": [
+    {
+      "id": "session:8596f9ce-9d95-487e-aa3d-70a5feaec2b1:none",
+      "source": "session",
+      "name": "none",
+      "objective": "Session mission",
+      "createdAt": "2026-06-24T14:16:54.058Z",
+      "updatedAt": "2026-06-24T15:09:29.818Z",
+      "status": "done",
+      "workerCount": 4,
+      "taskCounts": {
+        "total": 4,
+        "pending": 0,
+        "blocked": 0,
+        "inProgress": 0,
+        "completed": 4,
+        "failed": 0
+      },
+      "agents": [
+        {
+          "name": "Explore:af33715",
+          "role": "Explore",
+          "ownership": "af33715667a867a32",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-06-24T15:09:29.818Z"
+        },
+        {
+          "name": "Explore:ab77767",
+          "role": "Explore",
+          "ownership": "ab77767a131fc258d",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-06-24T14:18:29.181Z"
+        },
+        {
+          "name": "Explore:a95a6ef",
+          "role": "Explore",
+          "ownership": "a95a6ef403495cc7e",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-06-24T14:18:43.687Z"
+        },
+        {
+          "name": "code-reviewer:a8fcbbb",
+          "role": "code-reviewer",
+          "ownership": "a8fcbbb161530dd64",
+          "status": "done",
+          "currentStep": null,
+          "latestUpdate": "completed",
+          "completedSummary": null,
+          "updatedAt": "2026-06-24T14:59:47.368Z"
+        }
+      ],
+      "timeline": [
+        {
+          "id": "session-stop:ab77767a131fc258d:2026-06-24T14:18:29.181Z",
+          "at": "2026-06-24T14:18:29.181Z",
+          "kind": "completion",
+          "agent": "Explore:ab77767",
+          "detail": "completed",
+          "sourceKey": "session-stop:ab77767a131fc258d"
+        },
+        {
+          "id": "session-stop:a95a6ef403495cc7e:2026-06-24T14:18:43.687Z",
+          "at": "2026-06-24T14:18:43.687Z",
+          "kind": "completion",
+          "agent": "Explore:a95a6ef",
+          "detail": "completed",
+          "sourceKey": "session-stop:a95a6ef403495cc7e"
+        },
+        {
+          "id": "session-start:a8fcbbb161530dd64:2026-06-24T14:56:18.260Z",
+          "at": "2026-06-24T14:56:18.260Z",
+          "kind": "update",
+          "agent": "code-reviewer:a8fcbbb",
+          "detail": "started code-reviewer:a8fcbbb",
+          "sourceKey": "session-start:a8fcbbb161530dd64"
+        },
+        {
+          "id": "session-stop:a1669ceeffb9fca3f:2026-06-24T14:56:52.730Z",
+          "at": "2026-06-24T14:56:52.730Z",
+          "kind": "completion",
+          "agent": "Explore:af33715",
+          "detail": "completed",
+          "sourceKey": "session-stop:a1669ceeffb9fca3f"
+        },
+        {
+          "id": "session-stop:a9c5992f562fa4edc:2026-06-24T14:59:43.869Z",
+          "at": "2026-06-24T14:59:43.869Z",
+          "kind": "completion",
+          "agent": "Explore:af33715",
+          "detail": "completed",
+          "sourceKey": "session-stop:a9c5992f562fa4edc"
+        },
+        {
+          "id": "session-stop:a8fcbbb161530dd64:2026-06-24T14:59:47.368Z",
+          "at": "2026-06-24T14:59:47.368Z",
+          "kind": "completion",
+          "agent": "code-reviewer:a8fcbbb",
+          "detail": "completed",
+          "sourceKey": "session-stop:a8fcbbb161530dd64"
+        },
+        {
+          "id": "session-stop:a4183780bb43bbf9c:2026-06-24T15:09:29.818Z",
+          "at": "2026-06-24T15:09:29.818Z",
+          "kind": "completion",
+          "agent": "Explore:af33715",
+          "detail": "completed",
+          "sourceKey": "session-stop:a4183780bb43bbf9c"
+        }
+      ]
+    }
+  ]
+}

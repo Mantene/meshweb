@@ -1,0 +1,24 @@
+{
+  "name": "@meshtastic/bridge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Server-side serial bridge: exposes a USB-connected Meshtastic device (e.g. /dev/ttyACM0) to the unmodified web client via the device HTTP API (/api/v1) and serves the static web client.",
+  "license": "GPL-3.0-only",
+  "type": "module",
+  "scripts": {
+    "build": "tsdown",
+    "clean": "rm -rf dist",
+    "start": "node dist/server.mjs"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "^2.12.0",
+    "@meshtastic/sdk": "workspace:*",
+    "@meshtastic/transport-node-serial": "workspace:*",
+    "serialport": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.3",
+    "tsdown": "^0.22.3",
+    "typescript": "^6.0.3"
+  }
+}

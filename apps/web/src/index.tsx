@@ -1,0 +1,52 @@
+import React from "react";
+import "@app/index.css";
+
+// Import feature flags and dev overrides
+import "@core/services/dev-overrides.ts";
+import { enableMapSet } from "immer";
+import "maplibre-gl/dist/maplibre-gl.css";
+import { Suspense } from "react";
+import { createRoot } from "react-dom/client";
+import "./i18n-config.ts";
+import { router } from "@app/routes.tsx";
+import { meshRegistry } from "@core/meshRegistry.ts";
+import { useAppStore } from "@core/stores";
+import { MeshRegistryProvider } from "@meshtastic/sdk-react";
+import { type createRouter, RouterProvider } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
+
+declare module "@tanstack/react-router" {
+  interface Register {
+    router: ReturnType<typeof createRouter>;
+  }
+}
+const container = document.getElementById("root") as HTMLElement;
+const root = createRoot(container);
+
+function IndexPage() {
+  enableMapSet();
+  const appStore = useAppStore();
+  const translation = useTranslation();
+
+  const context = React.useMemo(
+    () => ({
+      stores: {
+        app: appStore,
+      },
+      i18n: translation,
+    }),
+    [appStore, translation],
+  );
+
+  return (
+    <React.StrictMode>
+      <Suspense fallback={null}>
+        <MeshRegistryProvider registry={meshRegistry}>
+          <RouterProvider router={router} context={context} />
+        </MeshRegistryProvider>
+      </Suspense>
+    </React.StrictMode>
+  );
+}
+
+root.render(<IndexPage />);

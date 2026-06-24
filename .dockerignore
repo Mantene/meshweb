@@ -1,0 +1,18 @@
+# Keep the Docker build context lean and free of secrets.
+**/node_modules
+.git
+.github
+**/dist
+**/.turbo
+**/*.tsbuildinfo
+e2e
+tests
+playwright-report
+**/playwright/.cache
+**/*.pem
+**/*.crt
+**/*.key
+.omc
+.agent_plans
+.devcontainer
+**/.DS_Store
