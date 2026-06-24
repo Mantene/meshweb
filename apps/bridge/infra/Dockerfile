@@ -27,10 +27,14 @@ RUN --mount=type=cache,id=pnpm-store,target=/root/.local/share/pnpm/store \
 
 # Generate protobuf TS stubs. The local @meshtastic/protobufs workspace package
 # re-exports generated code that is gitignored (not committed) and that the web
-# app build resolves to. Uses buf with the remote `es` plugin → requires network
-# to buf.build at build time. (The bridge itself doesn't need this; it uses the
-# pre-generated JSR copy of the protobufs.)
-RUN cd packages/protobufs && npx --yes @bufbuild/buf@latest generate
+# app build resolves to. We generate with the LOCAL protoc-gen-es plugin (already
+# a devDependency) via an overriding template, so this needs NO connection to
+# buf.build — important behind a TLS-intercepting proxy. (The bridge itself
+# doesn't need this; it uses the pre-generated JSR copy of the protobufs.)
+RUN cd packages/protobufs \
+ && printf 'version: v2\nplugins:\n  - local: protoc-gen-es\n    out: packages/ts/dist\n    opt: target=ts\n' > buf.gen.local.yaml \
+ && DO_NOT_TRACK=1 PATH="$PWD/node_modules/.bin:$PATH" \
+      npx --yes @bufbuild/buf@latest generate --template buf.gen.local.yaml
 
 # Static web client -> apps/web/dist
 # VITE_DISABLE_PWA: skip vite-plugin-pwa (unnecessary for a LAN deployment; its
