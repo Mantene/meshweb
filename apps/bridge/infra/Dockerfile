@@ -26,8 +26,12 @@ RUN --mount=type=cache,id=pnpm-store,target=/root/.local/share/pnpm/store \
     pnpm install --frozen-lockfile
 
 # Static web client -> apps/web/dist
-RUN pnpm -C apps/web build
-# Bundled bridge      -> apps/bridge/dist/server.js  (serialport external)
+# VITE_DISABLE_PWA: skip vite-plugin-pwa (unnecessary for a LAN deployment; its
+#   service-worker build step is fragile under Vite 8 + rolldown in-container).
+# NODE_OPTIONS: headroom for the large client chunks so a constrained host won't OOM.
+RUN VITE_DISABLE_PWA=true NODE_OPTIONS=--max-old-space-size=4096 \
+    pnpm -C apps/web build
+# Bundled bridge      -> apps/bridge/dist/server.mjs  (serialport external)
 RUN pnpm -C apps/bridge build
 
 ############################################

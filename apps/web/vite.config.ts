@@ -52,9 +52,17 @@ export default defineConfig(({ mode }) => {
           },
         },
       }),
-      VitePWA({
-        selfDestroying: true,
-      }),
+      // PWA/service-worker is unnecessary for a same-origin LAN deployment (e.g.
+      // the serial bridge container) and its build step is fragile under Vite 8 +
+      // rolldown on some filesystems. Gate it so `VITE_DISABLE_PWA=true` skips it;
+      // default behavior is unchanged.
+      ...(process.env.VITE_DISABLE_PWA === "true"
+        ? []
+        : [
+            VitePWA({
+              selfDestroying: true,
+            }),
+          ]),
     ],
     optimizeDeps: {
       include: ["react/jsx-runtime"],
